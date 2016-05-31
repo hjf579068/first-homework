@@ -1,0 +1,1 @@
+bwplot(size~a1,data=algae,ylab = "River Size",xlab = "Algal A1")

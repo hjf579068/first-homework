@@ -1,0 +1,3 @@
+library(DMwR)
+summary(algae)
+hist(algae$mxPH,prob=T)

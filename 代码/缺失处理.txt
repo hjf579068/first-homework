@@ -1,0 +1,13 @@
+剔除：
+algae <- na.omit(algae)
+用高频率值来填补缺失值：
+algae[48,'mxPH'] <- mean(algae$mxPH,na.rm=T)
+algae[is.na(algae$Chla),'Chla'] <- median(algae$Chla,na.rm=T)
+通过变量的相关关系来调补缺失值：
+> options(digits = 1)
+> cor(algae[,4:18],use="complete.obs")
+通过探索案例之间的相似性来填补缺失值：
+> algae<-algae[-manyNAs(algae),]
+> algae<-knnImputation(algae,k=10)
+> algae
+
